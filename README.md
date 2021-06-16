@@ -1,7 +1,7 @@
 # caixa-eletronico
 
 #### Esse desafio foi realizado seguindo as regras padrão estabelecidas pelo site [Dojo Puzzles](https://dojopuzzles.com/problems/caixa-eletronico/)
-![MarineGEO circle logo](/assets/img/MarineGEO_logo.png "MarineGEO logo")
+![Money](https://github.com/ThalesGabriel/caixa-eletronico/blob/main/public/tenor.gif "Money")
 
 ### Exemplo de Resposta
 
