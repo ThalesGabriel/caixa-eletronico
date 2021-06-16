@@ -1,7 +1,8 @@
 # caixa-eletronico
 
+<div style="text-align:center"><img src="https://github.com/ThalesGabriel/caixa-eletronico/blob/main/public/tenor.gif" alt="Money"/></div>
+
 #### Esse desafio foi realizado seguindo as regras padrão estabelecidas pelo site [Dojo Puzzles](https://dojopuzzles.com/problems/caixa-eletronico/)
-![Money](https://github.com/ThalesGabriel/caixa-eletronico/blob/main/public/tenor.gif "Money")
 
 ### Exemplo de Resposta
 
