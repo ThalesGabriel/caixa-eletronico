@@ -2,7 +2,25 @@
 
 #### Esse desafio foi realizado seguindo as regras padrão estabelecidas pelo site [Dojo Puzzles](https://dojopuzzles.com/problems/caixa-eletronico/)
 
-#### Características do desafio
+### Exemplo de Resposta
+
+- Exemplo = R$30,00;
+- Resposta API = Valor do Saque: R$ 30,00 – Resultado Esperado: Entregar 1 nota(s) de R$20,00, e 1 nota(s) de R$10,00.
+- Resposta esperada pelo desafio = Valor do Saque: R$ 30,00 – Resultado Esperado: Entregar 1 nota de R$20,00 e 1 nota de R$ 10,00.
+
+### Características do projeto
+
+- Foi criado utilizando NodeJs como framework **JavaScript**;
+- Não foi implementado o nível `HATEOAS` pelo fato de só existir 1 endpoint `/transform?decimal=R$30,00`
+- Node **v15.14.0**
+- Foram utilizadas as seguintes libs:
+  - [x] config -> Alternativa ao `.env`;
+  - [x] consign -> Carrega os arquivos que são especificados de maneira automática em toda aplicação;
+  - [x] express -> Levantar o servidor http;
+  - [x] ramda -> Operações com listas.
+- Utiliza uma árvore binária balanceada conhecida como AVL para realizar nossas operações.
+
+### Características do desafio
 - [x] Entregar o menor número de notas;
 - [x] É possível sacar o valor solicitado com as notas disponíveis;
 - [x] Saldo do cliente infinito;
@@ -10,21 +28,13 @@
 - [x] Notas disponíveis de R$ 100,00; R$ 50,00; R$ 20,00 e R$ 10,00.;
 - [ ] valor finito de cédulas para aumentar a dificuldade do problema).
 
-### Exemplo de Resposta
+### Como rodar o projeto
 
-- Exemplo = R$30,00;
-- Resposta API = Valor do Saque: R$ 30,00 – Resultado Esperado: Entregar 1 nota(s) de R$20,00, e 1 nota(s) de R$10,00.
-- Resposta esperada pelo desafio = Valor do Saque: R$ 30,00 – Resultado Esperado: Entregar 1 nota de R$20,00 e 1 nota de R$ 10,00.
-
-### Características do desafio
-
-- Foi criado utilizando NodeJs como framework **JavaScript**;
-- Foram utilizadas as seguintes libs:
-  - [x] config -> Alternativa ao `.env`;
-  - [x] consign -> Carrega os arquivos que são especificados de maneira automática em toda aplicação;
-  - [x] express -> Levantar o servidor http;
-  - [x] ramda -> Operações com listas.
-- Utiliza uma árvore binária balanceada conhecida como AVL para realizar nossas operações.
+1. Clonando o repositório
+  - Entre na pasta deste projeto depois de clonado
+  - Rode `npm install`
+  - Rode `npm start`
+  - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
 
 ### Lógica do desafio
 
