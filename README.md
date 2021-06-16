@@ -13,6 +13,7 @@
 ### Características do projeto
 
 - Foi criado utilizando NodeJs como framework **JavaScript**;
+  - O motivo da escolha por javascript foi a palavra chave do texto de instrução do desafio: `Simplicidade`. Por java ser uma linguagem tipada eu creio que em certos aspectos ela facilita muito, a organização e arquitetura são bem mais fáceis de se manter mas em questão de simplicidade entre java e javascript, eu creio que a segunda se destaca.
 - Não foi implementado o nível `HATEOAS` pelo fato de só existir 1 endpoint `/transform?decimal=R$30,00`
 - Node **v15.14.0**
 - Foram utilizadas as seguintes libs:
