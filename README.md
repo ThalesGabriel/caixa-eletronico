@@ -21,7 +21,9 @@
   - [x] consign -> Carrega os arquivos que são especificados de maneira automática em toda aplicação;
   - [x] express -> Levantar o servidor http;
   - [x] ramda -> Operações com listas.
-- Utiliza uma árvore binária balanceada conhecida como AVL para realizar nossas operações.
+- Utiliza uma árvore binária balanceada conhecida como AVL para realizar nossas operações;
+- Utiliza pipeline de CI do `github actions`;
+- Utiliza a cobertura de código do `sonarcloud` na pipeline de CI.
 
 ### Características do desafio
 - [x] Entregar o menor número de notas;
@@ -80,5 +82,3 @@
 
 - O Código talvez não seja a melhor escolha para o desafio e o desenvolvimento dele também não. Porém certamente é um código simples, escalável e de fácil manutenção;
 - Podemos utilizar a biblioteca `fortio` em conjunto com kubernetes para descobrirmos quantas chamadas a api em sequência são necessárias para derrubar a aplicação.
-
-
