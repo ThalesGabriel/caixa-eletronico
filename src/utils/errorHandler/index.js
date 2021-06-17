@@ -29,7 +29,7 @@ const validateParam = (decimal, res = null) => {
   str_dec = str_dec.slice(2, str_dec.length).split(",")[0]
   if(!Boolean(str_dec)) return formError("You need to pass a decimal value from URL", res)
   if (str_dec[str_dec.length - 1] != "0") return formError("You need to pass multiple from 10", res)
-  if (!message) return str_dec
+  if (!message) return {status: 200, str_dec}
   
   return formError("You need to pass multiple from 10", res, "base_url/transform?decimal=R$30,00")
 }

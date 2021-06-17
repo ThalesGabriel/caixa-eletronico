@@ -24,15 +24,15 @@ describe('Validate param', () => {
   it('should get response 200 because we passed a valid param formating', () => {
     const url = 'http://localhost:3000/transform?decimal=R$30,00'
     const param = url.split("=")[1]
-    const res = validateParam(param)
-    expect(res).toBe("30");
+    const {str_dec} = validateParam(param)
+    expect(str_dec).toBe("30");
   });
 
   it('should get response 200 because we passed another valid param formating', () => {
     const url = 'http://localhost:3000/transform?decimal=R$30'
     const param = url.split("=")[1]
-    const res = validateParam(param)
-    expect(res).toBe("30");
+    const {str_dec} = validateParam(param)
+    expect(str_dec).toBe("30");
   });
 
   it('should get response 400 because we just passed "R$"', () => {
