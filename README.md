@@ -39,6 +39,7 @@
 - [x] Saldo do cliente infinito;
 - [x] Quantidade de notas infinito;
 - [x] Notas disponíveis de R$ 100,00; R$ 50,00; R$ 20,00 e R$ 10,00.;
+  - Devido a limitação de notas, assumi que os valores poderiam apenas ser múltiplos de 10
 - [ ] valor finito de cédulas para aumentar a dificuldade do problema).
 
 ### Como rodar o projeto
