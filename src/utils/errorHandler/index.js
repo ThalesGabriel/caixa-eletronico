@@ -1,33 +1,37 @@
-const validateURL = (decimal, res) => {
-  let message = null;
+const formError = (message, res, example = "base_url/transform?decimal=R$12570,00") => {
+  const jsonError =  {
+    status: 400,
+    message,
+    example,
+  }
 
+  if(!res) return jsonError
+  else {
+    res.send(jsonError);
+    throw new Error(message);
+  }
+}
+
+const validateURL = (decimal, res = null) => {
+  let message = null;
   if(!decimal) message = "You need to pass a decimal value from URL"
   if(!message) return
 
-  res.send({
-    status: 400,
-    message,
-    example: "base_url/transform?decimal=R$12570,00",
-  });
-
-  throw new Error(message)
+  return formError(message, res)
 }
 
-const validateParam = (decimal, res) => {
+const validateParam = (decimal, res = null) => {
   let str_dec = String(decimal);
-  str_dec = str_dec.slice(2, str_dec.length).split(",")[0]
   let message = null;
-
-  if (str_dec[str_dec.length - 1] != 0) message = "You need to pass multiple from 10"
+  
+  if(!Boolean(str_dec)) return formError("You need to pass a decimal value from URL", res)
+  if(!str_dec.startsWith("R$")) return formError("You need to pass a valid decimal value from URL", res)
+  str_dec = str_dec.slice(2, str_dec.length).split(",")[0]
+  if(!Boolean(str_dec)) return formError("You need to pass a decimal value from URL", res)
+  if (str_dec[str_dec.length - 1] != "0") return formError("You need to pass multiple from 10", res)
   if (!message) return str_dec
   
-  res.send({
-    status: 400,
-    message,
-    example: "base_url/transform?decimal=R$30,00",
-  });
-  
-  throw new Error(message)
+  return formError("You need to pass multiple from 10", res, "base_url/transform?decimal=R$30,00")
 }
 
 module.exports = { validateParam, validateURL }
