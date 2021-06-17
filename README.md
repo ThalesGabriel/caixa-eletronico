@@ -62,9 +62,10 @@
 
 ### Testes
 
-- [ ] URL válida;
-- [ ] Valor do saque múltiplo de 10;
-- [ ] Resposta esperada de R$30,00 = "Valor do Saque: R$ 30,00 – Resultado Esperado: Entregar 1 nota(s) de R$20,00, e 1 nota(s) de R$10,00.";
+- [x] URL válida;
+- [x] Parâmetro válid0;
+- [x] Valor do saque múltiplo de 10;
+- [x] Teste com os exemplos do site do desafio;
 - [ ] Fortio para teste de stress.
 
 ### Conclusões do desafio
