@@ -22,7 +22,7 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: caixa-eletronico
-        environment_name: caixa-eletronico-prod
+        environment_name: Caixaeletronico-env
         version_label: 12345
         region: us-west-2
         deployment_package: deploy.zip
