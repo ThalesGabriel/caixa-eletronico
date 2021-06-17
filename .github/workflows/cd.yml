@@ -3,7 +3,6 @@ on:
   push:
     branches:
     - main
-    - ft-deploy
     
 jobs:
   build:
@@ -30,9 +29,6 @@ jobs:
 
     - name: Installing NPM
       run: npm install
-
-    - name: Installing Nodemon
-      run: npm install nodemon --save-dev
 
     - name: Generate deployment package
       run: zip -r deploy.zip * -x "**node_modules**"

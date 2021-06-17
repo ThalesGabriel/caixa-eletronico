@@ -22,7 +22,8 @@
   - [x] express -> Levantar o servidor http;
   - [x] ramda -> Operações com listas.
 - Utiliza uma árvore binária balanceada conhecida como AVL para realizar nossas operações;
-- Utiliza pipeline de CI do `github actions`;
+- Utiliza pipeline de CI do `github actions` para realização de `testes automatizados`;
+- Utiliza pipeline de CI do `github actions` para `deploy no beanstalk`;
 - Utiliza a cobertura de código do `sonarcloud` na pipeline de CI.
 
 ### Características do desafio
