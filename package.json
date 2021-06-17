@@ -2,7 +2,7 @@
   "name": "converter-decimais2romanos",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "nodemon src/app.js",
     "test": "jest ./tests --coverage"
