@@ -9,12 +9,12 @@ module.exports = (app) => {
     const { decimal } = req.query;
 
     validateURL(decimal, res)
-    const string_decimal = validateParam(decimal, res)
+    const {str_dec: string_decimal} = validateParam(decimal, res)
     const bucks = { 100: 0, 50: 0, 20: 0, 10: 0 };
     const tree = initAVLTree();
 
     // Decompose Number O(n). Ex: 180 will be 100 and 80. 12650 will be 10000, 2000, 600, 50
-    iterator = 0;
+    let iterator = 0;
     while(iterator < string_decimal.length) {
       let places = (string_decimal.length-1) - iterator
       let dec = string_decimal[iterator] + "0".repeat(places)
@@ -39,10 +39,10 @@ module.exports = (app) => {
       let concatenate = ""
       const initialNotes = reversed_bucks.slice(0,reversed_bucks.length-1)
       
-      initialNotes.map(key => {
+      initialNotes.forEach(key => {
         if(bucks[key]) 
-          concatenate += `entregar ${bucks[key]} nota(s) de R$${key},00` + ", "
-      })
+          return concatenate += `entregar ${bucks[key]} nota(s) de R$${key},00` + ", "
+      });
 
       concatenate = concatenate.substr(0, concatenate.length-1)
       concatenate += ` e ${bucks[reversed_bucks[reversed_bucks.length-1]]} nota(s) de R$${reversed_bucks[reversed_bucks.length-1]},00.`
