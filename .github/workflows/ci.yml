@@ -2,7 +2,7 @@ name: CI-caixa-eletronico
 on:
   pull_request:
     branches:
-      - main
+      - development
 
 jobs:
   build:
