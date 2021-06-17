@@ -31,6 +31,9 @@ jobs:
     - name: Installing NPM
       run: npm install
 
+    - name: Installing Nodemon
+      run: npm install nodemon --global
+
     - name: Generate deployment package
       run: zip -r deploy.zip * -x "**node_modules**"
 
