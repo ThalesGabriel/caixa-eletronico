@@ -2,9 +2,10 @@
   "name": "converter-decimais2romanos",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "jest ./tests --coverage"
   },
   "keywords": [],
@@ -18,6 +19,11 @@
   },
   "devDependencies": {
     "jest": "^27.0.4",
+    "nodemon": "^2.0.7",
     "supertest": "^6.1.3"
+  },
+  "engines": {
+    "node": ">=14.4.0",
+    "npm": ">=7.7.6"
   }
 }
