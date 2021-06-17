@@ -32,7 +32,7 @@ jobs:
       run: npm install
 
     - name: Installing Nodemon
-      run: npm install nodemon --global
+      run: npm install nodemon --save-dev
 
     - name: Generate deployment package
       run: zip -r deploy.zip * -x "**node_modules**"
