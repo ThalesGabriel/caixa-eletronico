@@ -34,7 +34,7 @@ module.exports = (app) => {
     let final_answer = `Valor do Saque: R$ ${string_decimal},00 – Resultado Esperado: `
 
     if(reversed_bucks.length == 1) 
-      final_answer += `Entregar ${bucks[reversed_bucks[0]]} nota(s) de R$${key},00`
+      final_answer += `Entregar ${bucks[reversed_bucks[0]]} nota(s) de R$${reversed_bucks[0]},00`
     else {
       let concatenate = ""
       const initialNotes = reversed_bucks.slice(0,reversed_bucks.length-1)
