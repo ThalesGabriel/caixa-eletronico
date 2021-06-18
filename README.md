@@ -17,6 +17,7 @@
 - Não foi implementado o nível `HATEOAS` pelo fato de só existir 1 endpoint `/transform?decimal=R$30,00`
 - Node **v15.14.0**
 - Foram utilizadas as seguintes libs:
+  - [x] cors -> Acesso pelo frontend;
   - [x] config -> Alternativa ao `.env`;
   - [x] consign -> Carrega os arquivos que são especificados de maneira automática em toda aplicação;
   - [x] express -> Levantar o servidor http;
@@ -56,7 +57,8 @@
   - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
 
 3. Acesso online
-  - Abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=160
+  - Se preferir entrar pelo `frontend` da aplicação https://caixa-eletronico.vercel.app/
+  - Se preferir entrar pelo `backend` abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=160
 
 ### Lógica do desafio
 
