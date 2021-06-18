@@ -70,7 +70,7 @@ describe('Should test my app server', () => {
   });
 
   it('should test a random value like R$300', async () => {
-    const res = await request(app).get("/transform?decimal=R$30");
+    const res = await request(app).get("/transform?decimal=R$300");
     const { body } = res;
     expect(body.message).toBe("Valor do Saque: R$ 300,00 – Resultado Esperado: Entregar 3 nota(s) de R$100,00")
   });
