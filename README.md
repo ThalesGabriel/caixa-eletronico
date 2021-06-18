@@ -17,6 +17,7 @@
 - Não foi implementado o nível `HATEOAS` pelo fato de só existir 1 endpoint `/transform?decimal=R$30,00`
 - Node **v15.14.0**
 - Foram utilizadas as seguintes libs:
+  - [x] cors -> Acesso pelo frontend;
   - [x] config -> Alternativa ao `.env`;
   - [x] consign -> Carrega os arquivos que são especificados de maneira automática em toda aplicação;
   - [x] express -> Levantar o servidor http;
@@ -39,7 +40,7 @@
 - [x] Saldo do cliente infinito;
 - [x] Quantidade de notas infinito;
 - [x] Notas disponíveis de R$ 100,00; R$ 50,00; R$ 20,00 e R$ 10,00.;
-  - Devido a limitação de notas, assumi que os valores poderiam apenas ser múltiplos de 10
+  - Devido a limitação de notas, assumi que os valores deveriam ser múltiplos de 10
 - [ ] valor finito de cédulas para aumentar a dificuldade do problema).
 
 ### Como rodar o projeto
@@ -50,8 +51,14 @@
   - Rode `npm start`
   - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
 
-2. Acesso online
-  - Abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=160
+2. Imagem docker
+  - Foi utilizado multi stage building para diminuir a imagem inicial de quase 1GB possuindo agora 112MB
+  - Rode `docker run -dp 8080:8080 --name app --rm 042821/caixa-eletronico`
+  - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
+
+3. Acesso online
+  - Se preferir entrar pelo `frontend` da aplicação https://caixa-eletronico.vercel.app/
+  - Se preferir entrar pelo `backend` abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=160
 
 ### Lógica do desafio
 

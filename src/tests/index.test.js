@@ -69,9 +69,9 @@ describe('Should test my app server', () => {
     expect(body.message).toBe("Valor do Saque: R$ 12650,00 – Resultado Esperado: Entregar 126 nota(s) de R$100,00, e 1 nota(s) de R$50,00.")
   });
 
-  it('should test a random value like R$380', async () => {
-    const res = await request(app).get("/transform?decimal=R$380");
+  it('should test a random value like R$300', async () => {
+    const res = await request(app).get("/transform?decimal=R$300");
     const { body } = res;
-    expect(body.message).toBe("Valor do Saque: R$ 380,00 – Resultado Esperado: Entregar 3 nota(s) de R$100,00, entregar 1 nota(s) de R$50,00, entregar 1 nota(s) de R$20,00, e 1 nota(s) de R$10,00.")
+    expect(body.message).toBe("Valor do Saque: R$ 300,00 – Resultado Esperado: Entregar 3 nota(s) de R$100,00")
   });
 })
