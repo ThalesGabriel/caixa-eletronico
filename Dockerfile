@@ -8,7 +8,6 @@ COPY ./config ./config
 
 FROM node:10.15.2-alpine
 WORKDIR /usr/src/app
-RUN npm install nodemon --global
 COPY package*.json ./
 RUN npm install --only=production
 COPY --from=0 /usr/src/app .

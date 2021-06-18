@@ -30,8 +30,7 @@
 - Utiliza os conceitos do `Git Flow`;
 - `CI` é feito com a pipeline do github actions, apenas nos merges da branch `develop`, para realização de `testes automatizados`;
 - `CD` é feito também nas pipelines do github actions com uma `action` chamada `Beanstalk Deploy` para a implantação na `AWS`;
-- Utiliza pipeline de CI do `github actions` para `deploy no beanstalk`;
-- Utiliza a cobertura de código do `sonarcloud` na pipeline de CI.
+- Utiliza a cobertura de código do `sonarcloud` na pipeline de CI(`77% ~ 80%`).
 - O `K8s` não foi utilizado nesse projeto;
 
 ### Características do desafio
@@ -49,23 +48,23 @@
   - Entre na pasta deste projeto depois de clonado
   - Rode `npm install`
   - Rode `npm start`
-  - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
+  - Abra o navegador no link http://localhost:8080/transform?decimal=R$300,00
 
 2. Imagem docker
   - Foi utilizado multi stage building para diminuir a imagem inicial de quase 1GB possuindo agora 112MB
   - Rode `docker run -dp 8080:8080 --name app --rm 042821/caixa-eletronico`
   - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
 
-3. Acesso online
+3. Acesso online(`frontend` ainda sem acesso ao `backend` por conta da falta da extensão `HTTPS`)
   - Se preferir entrar pelo `frontend` da aplicação https://caixa-eletronico.vercel.app/
-  - Se preferir entrar pelo `backend` abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=160
+  - Se preferir entrar pelo `backend` abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=R$160
 
 ### Lógica do desafio
 
 1. O número é decomposto. Exemplo: 1830 -> 1000 / 800 / 30 / 0;
 2. Cada número do que decompomos é jogado na árvore binária;
 3. A árvore binária tem o objetivo de encontrar a cédula mais adequada ao valor;
-  - Regras da pesquisa do valor na árvore binária:
+  - Regras da pesquisa de cédula mais adequada na árvore binária:
     - Nós disponíveis(Representam as cédulas): 10, 20, 50, 100;
     - Se o número for 0 ou menor que 20 e diferente de 10 não queremos continuar a pesquisa;
     - Se o número for maior do que 100 então a divisão desse número por 100 representa a quantidade de cédulas de 100 que queremos;
@@ -73,8 +72,8 @@
       - Se o número for divisível por 10, 20 ou 50:
         - A divisão entre os dois representa a quantidade de cédulas que queremos.
       - Caso contrário:
-        - A cédula que possui o valor mais próximo do número solicitado é escolhida;
-        - O número é subtraído pelo valor da cédula mais próxima;
+        - O nó que possui o valor mais próximo do número solicitado é escolhido;
+        - O número é subtraído pelo valor do nó do passo anterior;
         - O resultado da operação anterior é jogado na primeira regra de pesquisa.
     - Se o número for igual a um nó automaticamente temos nossa cédula necessária;
     - Se o número for menor que um nó e não tiver passado nos critérios anteriores o percurso em árvore é para esquerda;
@@ -87,17 +86,16 @@
 - [x] Parâmetro válid0;
 - [x] Valor do saque múltiplo de 10;
 - [x] Teste com os exemplos do site do desafio;
-- [ ] Fortio para teste de stress.
 
 ### Conclusões do desafio
 
 - A complexidade em tempo é bem performática tendo notação assintótica O(n);
-- Apesar de parecer não muito performático o `n` representa a quantidade de algarismos de um número;
+- Apesar de parecer não muito performático o `n` representa a quantidade de algarismos do número de entrada;
 - Pelo ponto anterior podemos perceber que embora consideremos números muito altos ainda assim o código tem potencial escalável;
-- A busca em árvore é o core da aplicação e pelo fato da busca em árvore ter notação O(1) no pior caso, visto que temos apenas 4 nós, é bem performática;
+- A busca em árvore é o core da aplicação e na grande maioria dos casos a notação Big O vai ser de um valor constante ou entre O(1) e O(log n)
 - O pior caso da busca pela cédula ideal é quando nós precisamos entrar na condição `[REF01]` porém ainda sim é um valor previsível já que após a subtração qualquer valor originado dessa operação cairá numa das condições das regras de pesquisa.
 
 ### Conclusão final
 
 - O Código talvez não seja a melhor escolha para o desafio e o desenvolvimento dele também não. Porém certamente é um código simples, escalável e de fácil manutenção;
-- Podemos utilizar a biblioteca `fortio` em conjunto com kubernetes para descobrirmos quantas chamadas a api em sequência são necessárias para derrubar a aplicação.
+- Podemos utilizar a biblioteca `fortio` em conjunto com `Kubernetes` para descobrirmos quantas chamadas a api em sequência são necessárias para derrubar a aplicação e também gerarmos inúmeros valores aleatórios dentro dos critérios que temos para executar testes.
