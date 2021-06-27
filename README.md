@@ -46,6 +46,7 @@
 
 1. Clonando o repositório
   - Entre na pasta deste projeto depois de clonado
+  - Rode `git checkout development` 
   - Rode `npm install`
   - Rode `npm start`
   - Abra o navegador no link http://localhost:8080/transform?decimal=R$300,00
@@ -55,7 +56,7 @@
   - Rode `docker run -dp 8080:8080 --name app --rm 042821/caixa-eletronico`
   - Abra o navegador no link http://localhost:8080/transform?decimal=R$30,00
 
-3. Acesso online(`frontend` ainda sem acesso ao `backend` por conta da falta da extensão `HTTPS`)
+3. Acesso online -> BLOQUEADO(FREE TIER FINALIZADA 27/Jun/2021)
   - Se preferir entrar pelo `frontend` da aplicação https://caixa-eletronico.vercel.app/
   - Se preferir entrar pelo `backend` abra o navegador no link http://caixaeletronico-env.eba-ira7mxwk.us-east-2.elasticbeanstalk.com/transform?decimal=R$160
 
